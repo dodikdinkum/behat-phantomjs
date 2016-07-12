@@ -4,7 +4,7 @@ Feature: Checkout Process
 	Which allows me to purchase the product
 
 @javascript
-Scenario: Add product to cart as an anonymous user
+Scenario: Add product to cart and then checkout
 	Given I am on "/30th-anniversary-concert"
 	When I fill in "mvn-cart-item[45468][qty]" with "1" 
 		And I press "Add to Cart & Check out"
