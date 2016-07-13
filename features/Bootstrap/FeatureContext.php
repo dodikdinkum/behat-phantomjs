@@ -11,6 +11,7 @@ class FeatureContext extends MinkContext implements SnippetAcceptingContext
 {
     /** @var string $chosenGreeting */
     private $chosenGreeting;
+
     /** @var string $name */
     private $name;
 
@@ -110,5 +111,21 @@ class FeatureContext extends MinkContext implements SnippetAcceptingContext
     public function iWaitForSeconds($seconds)
     {
         $this->getSession()->wait($seconds * 1000);
+    }
+
+    /**
+     * @Given /^I switch to the iframe "([^"]*)"$/
+     */
+    public function iSwitchToIframe($arg1 = null)
+    {
+        $this->getSession()->switchToIFrame($arg1);
+    }
+
+    /**
+     * @Given I switch to the main frame
+     */
+    public function iSwitchToMainFrame()
+    {
+        $this->getSession()->switchToIFrame();
     }
 }

@@ -10,7 +10,7 @@ Scenario: Donation Process
 	When I follow "Next Step"
 		Then I should see "Please let us know any special needs or questions about your order."
 	When I follow "Next Step"
-		Given I wait for 5 seconds
+		And I wait for 5 seconds
 		And I should see "Billing and Shipping Information"
 		And I fill in the following:
 		# Billing
@@ -23,6 +23,6 @@ Scenario: Donation Process
 		| billing_address_2 	|          					|
 		| billing_city          | Jakarta Selatan    		|
 		| billing_postcode      | 12430         	 		|
-		Given I wait for 5 seconds
+		And I wait for 5 seconds
 	When I press "Place order"
 		Then I should see "Card number is missing"
