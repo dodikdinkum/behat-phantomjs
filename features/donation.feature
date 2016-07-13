@@ -24,5 +24,15 @@ Scenario: Donation Process
 		| billing_city          | Jakarta Selatan    		|
 		| billing_postcode      | 12430         	 		|
 		And I wait for 5 seconds
-	When I press "Place order"
-		Then I should see "Card number is missing"
+	When I switch to the iframe "braintree-hosted-field-number"
+		And I fill in "credit-card-number" with "5555555555554444"
+	When I switch to the main frame
+		And I switch to the iframe "braintree-hosted-field-expirationDate"
+		And I fill in "expiration" with "0718"
+	When I switch to the main frame
+		And I switch to the iframe "braintree-hosted-field-cvv"
+		And I fill in "cvv" with "567"
+	When I switch to the main frame
+		And I press "Place order"
+		And I wait for 30 seconds
+		Then I should see "Thank You For Your Order!"
