@@ -12,7 +12,7 @@ Scenario: Add product to cart and then checkout
 	When I follow "Next Step"
 		Then I should see "Please let us know any special needs or questions about your order."
 	When I follow "Next Step"
-		And I wait for 5 seconds
+		And I wait for 10 seconds
 		And I should see "Billing and Shipping Information"
 		And I fill in the following:
 		# Billing
