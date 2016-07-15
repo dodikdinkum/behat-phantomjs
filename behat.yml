@@ -7,7 +7,7 @@ default:
         - Features\Bootstrap\FeatureContext
   extensions:
     Behat\MinkExtension:
-      base_url:  'http://test-pcms-concerts.pantheonsite.io'
+      base_url:  'http://dev-pcms-concerts.pantheonsite.io'
       sessions:
         default:
           goutte: ~

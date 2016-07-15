@@ -1,6 +1,6 @@
 {
-    "name": "jmauerhan/behat-phantomjs-example",
-    "description": "Example of how to use PhantomJS with Behat",
+    "name": "pcms-automated-testing",
+    "description": "PCMS Automated Testing with Behat and Mink",
     "type": "project",
     "require": {
         "php":">=5.4.0",
@@ -14,8 +14,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Jessica Mauerhan",
-            "email": "jessicamauerhan@gmail.com"
+            "name": "Dodik Gaghan S",
+            "email": "dodik@dinkuminteractive.com"
         }
     ],
     "autoload": {
