@@ -49,4 +49,22 @@ class FeatureContext extends MinkContext implements SnippetAcceptingContext
     {
         $this->getSession()->switchToIFrame();
     }
+
+    /** Click on the element with the provided CSS Selector
+     * @When /^I click on the element with css selector "([^"]*)"$/
+     */
+    public function iClickOnTheElementWithCSSSelector($cssSelector)
+    {
+        $session = $this->getSession();
+        $element = $session->getPage()->find(
+            'xpath',
+            $session->getSelectorsHandler()->selectorToXpath('css', $cssSelector) // just changed xpath to css
+        );
+        if (null === $element) {
+            throw new \InvalidArgumentException(sprintf('Could not evaluate CSS Selector: "%s"', $cssSelector));
+        }
+
+        $element->click();
+
+    }
 }
